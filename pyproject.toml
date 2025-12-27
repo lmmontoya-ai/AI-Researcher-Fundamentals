@@ -1,0 +1,73 @@
+[project]
+name = "ai-researcher-fundamentals"
+version = "0.1.0"
+description = "A learning roadmap to build research-grade ML/AI intuition through exploration, explanation, and implementation."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    # Core scientific computing
+    "numpy>=2.0",
+    "pandas>=2.0",
+    "scipy>=1.11",
+
+    # Visualization
+    "matplotlib>=3.8",
+    "plotly>=5.18",
+    "seaborn>=0.13",
+
+    # Classical ML
+    "scikit-learn>=1.4",
+
+    # Deep learning
+    "torch>=2.2",
+    "torchvision>=0.17",
+    "torchaudio>=2.2",
+
+    # Transformers & LLMs
+    "transformers>=4.38",
+    "tokenizers>=0.15",
+    "datasets>=2.17",
+    "accelerate>=0.27",
+    "peft>=0.9",
+
+    # Reinforcement learning
+    "gymnasium>=0.29",
+
+    # Experiment tracking
+    "wandb>=0.16",
+
+    # Jupyter & notebooks
+    "ipykernel>=6.29",
+    "nbformat>=5.9",
+    "ipywidgets>=8.1",
+
+    # Utilities
+    "einops>=0.7",
+    "tqdm>=4.66",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.2",
+    "pre-commit>=3.6",
+]
+
+# JAX (optional - for alternative implementations)
+jax = [
+    "jax>=0.4",
+    "flax>=0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+ignore = ["E501"]
